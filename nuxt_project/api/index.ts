@@ -1,6 +1,4 @@
 export const addTodo = async (payload) => {
-  console.log(payload);
-
   const result = await $fetch("/api/todos/add", {
     method: "POST",
     body: payload,
