@@ -24,17 +24,19 @@ definePageMeta({
 
 const route = useRoute();
 
-const URI = process.env.SERVER_URI || "http://localhost:5005";
+const URL = process.env.SERVER_URL || "http://localhost:5005";
 
 const state = ref({
   title: "",
   urgent: false,
 });
 
-const { data: todo } = await useFetch(`${URI}/todos/${route.params._id}`);
+if (route.params._id !== "add-todo") {
+  const { data: todo } = await useFetch(`${URL}/todos/${route.params._id}`);
 
-if (todo.value) {
-  state.value = todo.value;
+  if (todo.value) {
+    state.value = todo.value;
+  }
 }
 
 const onSubmit = async (e) => {

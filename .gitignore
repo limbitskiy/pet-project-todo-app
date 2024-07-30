@@ -7,7 +7,7 @@
 dist
 
 # Node dependencies
-nuxt_ap/node_modules
+nuxt_project/node_modules
 
 # Logs
 logs

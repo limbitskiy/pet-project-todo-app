@@ -2,7 +2,7 @@ version: "3"
 
 services:
   todo-app:
-    build: nuxt_app/.
+    build: nuxt_project/.
     ports:
       - 3000:3000
     environment:
